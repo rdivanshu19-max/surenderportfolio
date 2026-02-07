@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { profileInfo, achievements, expertiseAreas, careerTimeline } from '@/data/profile';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ProfessionalSkills } from '@/components/ProfessionalSkills';
+import { Testimonials } from '@/components/Testimonials';
+import { PerformanceCharts } from '@/components/PerformanceCharts';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Mail, Linkedin, TrendingUp, Users, Briefcase, Building, Target, Package, ClipboardList, ChevronDown } from 'lucide-react';
 import profilePhoto from '@/assets/profile-photo.png';
@@ -253,6 +255,12 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Performance Charts */}
+        <PerformanceCharts />
+
+        {/* Testimonials */}
+        <Testimonials />
 
         {/* Contact CTA */}
         <section className="py-20 md:py-28 px-6 lg:px-8 bg-primary/5">
