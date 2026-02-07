@@ -1,59 +1,43 @@
 /**
- * Core TypeScript interfaces for Frame Portfolio
- * Based on SPECIFICATION.md data model requirements
+ * Core TypeScript interfaces for Professional Portfolio
  */
 
-export type ProjectCategory = 'portraits' | 'landscapes' | 'editorial' | 'architecture' | 'documentary';
-
-export type AspectRatio = 'portrait' | 'landscape' | 'square';
-
-export interface ProjectImage {
-  id: string;
-  src: string;
-  alt: string;
-  aspectRatio: AspectRatio;
-  caption?: string;
-}
-
-export interface Project {
-  id: string;
-  title: string;
-  category: ProjectCategory;
-  year: string;
-  coverImage: string;
-  images: ProjectImage[];
-  description: string;
-  client?: string;
-  camera?: string;
-  location?: string;
-  slug: string;
-}
-
-export interface PhotographerInfo {
+export interface ProfileInfo {
   name: string;
+  title: string;
   tagline: string;
-  heroIntroduction: string;
-  biography: string;
-  approach: string;
-  awards: string[];
-  clients: string[];
-  education: string;
-  location: string;
+  about: string;
   email: string;
-  phone: string;
-  availability: string;
+  location: string;
+  experienceYears: string;
+  teamSize: string;
+  coreExpertise: string;
   socialLinks: {
-    instagram?: string;
     linkedin?: string;
-    behance?: string;
+    email?: string;
   };
   portraitImage: string;
 }
 
-export interface ContactSubmission {
-  name: string;
-  email: string;
-  projectType: 'editorial' | 'commercial' | 'personal';
-  message: string;
-  timestamp: Date;
+export interface Achievement {
+  id: string;
+  metric: string;
+  label: string;
+  icon: string;
+}
+
+export interface CareerEntry {
+  id: string;
+  company: string;
+  role: string;
+  years: string;
+  description: string;
+  current: boolean;
+}
+
+export interface ExpertiseArea {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
 }
