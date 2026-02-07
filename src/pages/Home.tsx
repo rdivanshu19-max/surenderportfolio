@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { profileInfo, achievements, expertiseAreas, careerTimeline } from '@/data/profile';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { ProfessionalSkills } from '@/components/ProfessionalSkills';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Mail, Linkedin, TrendingUp, Users, Briefcase, Building, Target, Package, ClipboardList, ChevronDown } from 'lucide-react';
 import profilePhoto from '@/assets/profile-photo.png';
@@ -206,8 +207,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Professional Skills */}
+        <ProfessionalSkills />
+
         {/* Career Timeline */}
-        <section className="py-20 md:py-28 px-6 lg:px-8">
+        <section className="py-20 md:py-28 px-6 lg:px-8 bg-secondary/30">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-14">
