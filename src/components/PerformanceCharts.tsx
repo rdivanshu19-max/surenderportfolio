@@ -7,11 +7,11 @@ import {
 } from 'recharts';
 
 const salesGrowthData = [
-  { year: 'Year 1', growth: 12 },
-  { year: 'Year 2', growth: 18 },
-  { year: 'Year 3', growth: 25 },
-  { year: 'Year 4', growth: 34 },
-  { year: 'Year 5', growth: 46 },
+  { year: 'Year 1', growth: 12, fill: 'var(--chart-1)' },
+  { year: 'Year 2', growth: 18, fill: 'var(--chart-2)' },
+  { year: 'Year 3', growth: 25, fill: 'var(--chart-3)' },
+  { year: 'Year 4', growth: 34, fill: 'var(--chart-4)' },
+  { year: 'Year 5', growth: 46, fill: 'var(--chart-5)' },
 ];
 
 const expertiseBreakdown = [
@@ -22,10 +22,10 @@ const expertiseBreakdown = [
 ];
 
 const COLORS = [
-  'hsl(var(--primary))',
-  'hsl(var(--primary) / 0.75)',
-  'hsl(var(--primary) / 0.5)',
-  'hsl(var(--primary) / 0.3)',
+  'var(--chart-1)',
+  'var(--chart-2)',
+  'var(--chart-3)',
+  'var(--chart-4)',
 ];
 
 const CustomTooltipStyle = {
@@ -68,30 +68,33 @@ export function PerformanceCharts() {
             <p className="text-xs text-muted-foreground mb-6">Cumulative % increase over 5 years</p>
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={salesGrowthData} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--muted-foreground) / 0.2)" />
                 <XAxis
                   dataKey="year"
                   tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
-                  axisLine={{ stroke: 'hsl(var(--border))' }}
+                  axisLine={{ stroke: 'hsl(var(--muted-foreground) / 0.3)' }}
                   tickLine={false}
                 />
                 <YAxis
                   tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
-                  axisLine={{ stroke: 'hsl(var(--border))' }}
+                  axisLine={{ stroke: 'hsl(var(--muted-foreground) / 0.3)' }}
                   tickLine={false}
                   unit="%"
                 />
                 <Tooltip
                   contentStyle={CustomTooltipStyle}
                   formatter={(value: number) => [`${value}%`, 'Growth']}
-                  cursor={{ fill: 'hsl(var(--primary) / 0.05)' }}
+                  cursor={{ fill: 'hsl(var(--muted-foreground) / 0.08)' }}
                 />
                 <Bar
                   dataKey="growth"
-                  fill="hsl(var(--primary))"
                   radius={[6, 6, 0, 0]}
                   maxBarSize={48}
-                />
+                >
+                  {salesGrowthData.map((entry, index) => (
+                    <Cell key={`bar-${index}`} fill={entry.fill} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </motion.div>

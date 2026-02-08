@@ -5,7 +5,7 @@ import { ProfessionalSkills } from '@/components/ProfessionalSkills';
 import { Testimonials } from '@/components/Testimonials';
 import { PerformanceCharts } from '@/components/PerformanceCharts';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { Mail, Linkedin, TrendingUp, Users, Briefcase, Building, Target, Package, ClipboardList, ChevronDown } from 'lucide-react';
+import { Mail, Linkedin, TrendingUp, Users, Briefcase, Building, Target, Package, ClipboardList, ChevronDown, FileDown } from 'lucide-react';
 import profilePhoto from '@/assets/profile-photo.png';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -87,6 +87,14 @@ export default function Home() {
                   >
                     <Mail className="size-4" />
                     Get in Touch
+                  </a>
+                  <a
+                    href="/resume/Surender-Singh-Rathore-Resume.pdf"
+                    download
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-md"
+                  >
+                    <FileDown className="size-4" />
+                    Download Resume
                   </a>
                   <a
                     href={profileInfo.socialLinks.linkedin}
