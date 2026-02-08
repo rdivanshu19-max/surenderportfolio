@@ -35,6 +35,13 @@ All colors MUST be HSL.
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
 
+  /* Chart Colors */
+  --chart-1: hsl(221 83% 53%);
+  --chart-2: hsl(142 71% 45%);
+  --chart-3: hsl(38 92% 50%);
+  --chart-4: hsl(0 84% 60%);
+  --chart-5: hsl(262 83% 58%);
+
   /* Shugar Design System Variables */
   --context-card-border: hsla(0, 0%, 92%, 1);
   --ds-red-800: oklch(58.19% 0.2482 25.15);
@@ -84,6 +91,13 @@ All colors MUST be HSL.
   --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
   --sidebar-border: hsl(240 3.7% 15.9%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  /* Chart Colors - Dark Mode */
+  --chart-1: hsl(217 91% 60%);
+  --chart-2: hsl(142 76% 56%);
+  --chart-3: hsl(43 96% 56%);
+  --chart-4: hsl(0 91% 71%);
+  --chart-5: hsl(262 83% 68%);
 
   /* Shugar Design System Variables - Dark Mode */
   --context-card-border: hsla(0, 0%, 18%, 1);
